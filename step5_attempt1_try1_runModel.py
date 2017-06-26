@@ -1,6 +1,14 @@
 #import xgboost as xgb
 import numpy as np
+import csv
 
+
+#TESTDATA_numberProductsArr = np.array(TESTDATA_numberProducts)
+#TESTDATA_numProductsX = np.ones((TESTDATA_numberProductsArr.shape[0],2))
+#TESTDATA_numProductsX[:,0] = TESTDATA_numberProductsArr
+
+#print(TESTDATA_numProductsX.shape)
+"""
 xData80A = np.load('GENERATED_FILES/Attempt1_Split1_xData80.npy')
 xData20A = np.load('GENERATED_FILES/Attempt1_Split1_xData20.npy')
 yData80 = np.load('GENERATED_FILES/Attempt1_Split1_yData80.npy')
@@ -29,3 +37,5 @@ clf.fit(xData80, yData80, eval_set=[(xData20, yData20)], verbose=True,
         eval_metric='mae', early_stopping_rounds=100)
 
 print("MAE if predict all zeros: " + str(maeAllZeros))
+
+"""
