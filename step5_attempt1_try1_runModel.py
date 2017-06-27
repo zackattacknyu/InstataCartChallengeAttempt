@@ -37,6 +37,9 @@ clf.fit(xData80, yData80, eval_set=[(xData20, yData20)], verbose=True,
 
 print("MAE if predict all zeros: " + str(maeAllZeros))
 
+YHATVALID = clf.predict(xData20)
+np.save('YHAT_VALID.npy',YHATVALID)
+
 TEST_DATA_YRESULT = clf.predict(TEST_DATA_XINPUT)
 np.save('RAW_YRESULT.npy',TEST_DATA_YRESULT)
 

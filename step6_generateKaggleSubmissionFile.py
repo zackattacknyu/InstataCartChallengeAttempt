@@ -4,6 +4,9 @@ import time
 import datetime
 import csv
 
+
+currentThresholdUse = 0.12
+
 TEST_DATA_YRESULT = np.load('GENERATED_FILES/RAW_YRESULT.npy')
 TEST_DATA_TABLE = np.load('GENERATED_FILES/TESTING_X_DATA.npy')
 
@@ -15,8 +18,7 @@ for rowNum in range(len(TEST_DATA_YRESULT)):
         print('Now Processing Result Row ' + str(rowNum/1000000.0) +
               ' of ' + str(len(TEST_DATA_YRESULT)/1000000.0) + ' million')
 
-    #randomly decide based on number whether to include product
-    if(random.random() < currentY):
+    if(currentY>currentThresholdUse):
         currentOrderId = TEST_DATA_TABLE[rowNum,1]
         currentProductId = TEST_DATA_TABLE[rowNum,2]
         if(currentOrderId not in mapOfOrdersAndProducts):
